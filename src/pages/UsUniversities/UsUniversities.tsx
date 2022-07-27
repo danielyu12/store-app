@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import UniversitiesMap from '../components/UniversitiesMap/UniversitiesMap';
+import UniversitiesMap from '../../components/UniversitiesMap/UniversitiesMap';
+import './UsUniversities.scss';
 
 const UsUniversities: React.FC = () => {
   const [pageNumber, setPageNumber] = useState<number>(-1);
@@ -19,7 +20,7 @@ const UsUniversities: React.FC = () => {
     const lowInd = pageNumber * 100;
     const highInd = (pageNumber + 1) * 100;
     setCurList(list.slice(lowInd, highInd));
-  }, [pageNumber]);
+  }, [list, pageNumber]);
 
   const handlePageIncrement = (event: React.MouseEvent<HTMLElement>) => {
     setPageNumber((prev) => prev + 1);
@@ -31,7 +32,7 @@ const UsUniversities: React.FC = () => {
   };
 
   return (
-    <React.Fragment>
+    <div className="page">
       <div>
         {pageNumber < 1 ? (
           <button disabled>Prev Page</button>
@@ -46,7 +47,7 @@ const UsUniversities: React.FC = () => {
       </div>
       <div>You are on page: {pageNumber + 1}</div>
       <UniversitiesMap list={curList} />
-    </React.Fragment>
+    </div>
   );
 };
 

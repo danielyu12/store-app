@@ -1,0 +1,32 @@
+body {
+  color: black;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+  width: auto;
+  height: 100px;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 3px 0;
+  width: 60%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.university-name {
+  font-size: 30px;
+}
+
+.university-url {
+  font-size: 15px;
+}

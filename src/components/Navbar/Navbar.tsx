@@ -1,25 +1,28 @@
 import React from 'react';
-import './Navbar.css';
+import './Navbar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <ul>
-      <li>
+    <nav className="navbar">
+      <div>
         <img
+          className="logo"
           src={require('./logo.png')}
           alt="missing file"
           onClick={() => navigate('/')}
         />
-      </li>
-      <li>
-        <Link to="/US">US Universities Only</Link>
-      </li>
-      <li>
-        <Link to="/Search">International Universities</Link>
-      </li>
-    </ul>
+      </div>
+      <ul className="nav-list">
+        <li>
+          <Link to="/US">US Universities Only</Link>
+        </li>
+        <li>
+          <Link to="/Search">Search for your University</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

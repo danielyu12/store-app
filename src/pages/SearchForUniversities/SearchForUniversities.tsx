@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
-import UniversitiesMap from '../components/UniversitiesMap/UniversitiesMap';
+import UniversitiesMap from '../../components/UniversitiesMap/UniversitiesMap';
+import './SearchForUniversities.scss';
 
-const SearchForUniversities = () => {
+const SearchForUniversities: React.FC = () => {
   const [searchList, setSearchList] = useState<any>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -27,6 +28,7 @@ const SearchForUniversities = () => {
     <div>
       <form onSubmit={handleSearch}>
         <input
+          className="searchbar"
           type="text"
           ref={inputRef}
           placeholder="Search for your university"

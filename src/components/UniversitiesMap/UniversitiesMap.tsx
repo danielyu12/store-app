@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { UniversityProps } from '../University/University';
+import React from 'react';
 import University from '../University/University';
-import axios from 'axios';
-import './UniversitiesMap.css';
+import './UniversitiesMap.scss';
 
 interface UniversitiesMapProps {
   list: any[];

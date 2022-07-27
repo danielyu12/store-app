@@ -1,12 +1,10 @@
 import React from 'react';
-import axios from 'axios';
-import Universities from './components/UniversitiesMap/UniversitiesMap';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import UsUniversities from './pages/UsUniversities';
-import SearchForUniversities from './pages/SearchForUniversities';
+import UsUniversities from './pages/UsUniversities/UsUniversities';
+import SearchForUniversities from './pages/SearchForUniversities/SearchForUniversities';
 import Navbar from './components/Navbar/Navbar';
-import './App.css';
+import './App.scss';
 import ErrorPage from './pages/ErrorPage';
 
 function App() {
