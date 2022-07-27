@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import Universities from './components/UniversitiesMap/UniversitiesMap';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import UsUniversities from './pages/UsUniversities';
+import SearchForUniversities from './pages/SearchForUniversities';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
+  // axios
+  //   .get('http://universities.hipolabs.com/search')
+  //   .then((res) => console.log(res.data));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/US" element={<UsUniversities />} />
+        <Route path="/Search" element={<SearchForUniversities />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
